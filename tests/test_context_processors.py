@@ -61,12 +61,18 @@ def test_sso_logout_url(request_logged_in, settings):
     assert context['sso_logout_url'] == expected
 
 
-def test_sso_reset_url(request_logged_in, settings):
-    settings.SSO_PASSWORD_RESET_URL = expected = 'http://www.reset.com/logout/'
-    context = context_processors.sso_processor(request_logged_in)
-    assert context['sso_password_reset_url'] == expected
-
-
 def test_sso_user(request_logged_in, sso_user):
     context = context_processors.sso_processor(request_logged_in)
     assert context['sso_user'] == sso_user
+
+
+def test_header_footer_context_processor(settings):
+    settings.HEADER_FOOTER_CONTACT_US_URL = 'http://bones.com'
+    settings.HEADER_FOOTER_CSS_ACTIVE_CLASSES = {'fab': True}
+
+    context = context_processors.header_footer_context_processor(None)
+
+    assert context == {
+        'header_footer_contact_us_url': 'http://bones.com',
+        'header_footer_css_active_classes': {'fab': True},
+    }
