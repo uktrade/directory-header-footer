@@ -9,8 +9,13 @@ pip install -r requirements.txt
 ## Installation
 
 ```shell
-pip install -e git+https://git@github.com/uktrade/directory-header-footer.git@0.1.0#egg=directory-header-footer
+pip install -e git+https://git@github.com/uktrade/directory-header-footer.git@v0.2.0#egg=directory-header-footer
 ```
+
+Note: 
+The version number 'v0.2.0' in the above command should change with each release. 
+See https://github.com/uktrade/directory-header-footer/releases for possible values.
+
 
 ## Development
 
