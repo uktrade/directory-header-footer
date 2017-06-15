@@ -1,5 +1,13 @@
 # directory-header-footer
 
+## Build status
+
+[![CircleCI](https://circleci.com/gh/uktrade/directory-header-footer/tree/master.svg?style=svg)](https://circleci.com/gh/uktrade/directory-header-footer/tree/master)
+
+## Coverage
+
+[![codecov](https://codecov.io/gh/uktrade/directory-header-footer/branch/master/graph/badge.svg)](https://codecov.io/gh/uktrade/directory-header-footer)
+
 ## Requirements
 
 ```shell
