@@ -4,11 +4,9 @@
 #
 #    pip-compile --output-file requirements_test.txt requirements_test.ini
 #
--e git+https://github.com/uktrade/directory-constants.git@v2.1.0#egg=directory_constants
-configparser==3.5.0       # via flake8
+-e git+https://github.com/steadysupply/directory-constants.git@7ce7601#egg=directory_constants
 coverage==4.4.1           # via pytest-cov
-django==1.9.13
-enum34==1.1.6             # via flake8
+django==1.10.7
 flake8==3.0.4
 mccabe==0.5.3             # via flake8
 py==1.4.34                # via pytest
