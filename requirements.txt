@@ -4,6 +4,7 @@
 #
 #    pip-compile --output-file requirements.txt requirements.ini
 #
--e git+https://github.com/steadysupply/directory-constants.git@7ce7601#egg=directory_constants
-django==1.10.7
+-e git+https://github.com/steadysupply/directory-constants.git@84b0b2f#egg=directory_constants
+django==1.11.4
+pytz==2017.2              # via django
 setuptools-git==1.2
