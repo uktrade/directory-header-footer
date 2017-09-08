@@ -6,6 +6,7 @@
 #
 -e git+https://github.com/uktrade/directory-constants.git@v2.1.0#egg=directory_constants
 configparser==3.5.0       # via flake8
+codecov==2.0.9
 coverage==4.4.1           # via pytest-cov
 django==1.9.13
 enum34==1.1.6             # via flake8
