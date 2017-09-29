@@ -32,13 +32,13 @@ def test_sso_logged_in(request_logged_in):
 
 
 def test_sso_profile_url(request_logged_in, settings):
-    settings.SSO_PROFILE_URL = expected = 'http://www.example.com/profile/'
+    settings.SSO_PROXY_PROFILE_URL = 'http://www.example.com/profile/'
     context = context_processors.sso_processor(request_logged_in)
-    assert context['sso_profile_url'] == expected
+    assert context['sso_profile_url'] == settings.SSO_PROXY_PROFILE_URL
 
 
 def test_sso_register_url_url(request_logged_in, settings):
-    settings.SSO_SIGNUP_URL = expected = 'http://www.example.com/signup/'
+    settings.SSO_PROXY_SIGNUP_URL = expected = 'http://www.example.com/signup/'
     context = context_processors.sso_processor(request_logged_in)
     assert context['sso_register_url'] == expected
 
@@ -49,14 +49,14 @@ def test_sso_logged_out(request_logged_out):
 
 
 def test_sso_login_url(request_logged_in, settings):
-    settings.SSO_LOGIN_URL = 'http://www.example.com/login/'
+    settings.SSO_PROXY_LOGIN_URL = 'http://www.example.com/login/'
     expected = 'http://www.example.com/login/?next=http://testserver/'
     context = context_processors.sso_processor(request_logged_in)
     assert context['sso_login_url'] == expected
 
 
 def test_sso_logout_url(request_logged_in, settings):
-    settings.SSO_LOGOUT_URL = expected = 'http://www.example.com/logout/'
+    settings.SSO_PROXY_LOGOUT_URL = expected = 'http://www.example.com/logout/'
     context = context_processors.sso_processor(request_logged_in)
     assert context['sso_logout_url'] == expected
 
