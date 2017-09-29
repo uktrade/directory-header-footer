@@ -10,7 +10,7 @@ def sso_processor(request):
         'sso_login_url': '{0}?next={1}'.format(login_url, url),
         'sso_register_url': settings.SSO_PROXY_SIGNUP_URL,
         'sso_logout_url': settings.SSO_PROXY_LOGOUT_URL,
-        'sso_profile_url': settings.SSO_PROXY_PROFILE_URL,
+        'sso_profile_url': settings.SSO_PROFILE_URL,
     }
 
 

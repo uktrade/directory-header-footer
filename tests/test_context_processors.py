@@ -32,9 +32,9 @@ def test_sso_logged_in(request_logged_in):
 
 
 def test_sso_profile_url(request_logged_in, settings):
-    settings.SSO_PROXY_PROFILE_URL = 'http://www.example.com/profile/'
+    settings.SSO_PROFILE_URL = 'http://www.example.com/profile/'
     context = context_processors.sso_processor(request_logged_in)
-    assert context['sso_profile_url'] == settings.SSO_PROXY_PROFILE_URL
+    assert context['sso_profile_url'] == settings.SSO_PROFILE_URL
 
 
 def test_sso_register_url_url(request_logged_in, settings):
