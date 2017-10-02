@@ -1,12 +1,11 @@
 # directory-header-footer
 
-## Build status
+[![code-climate-image]][code-climate]
+[![circle-ci-image]][circle-ci]
+[![codecov-image]][codecov]
+[![gemnasium-image]][gemnasium]
 
-[![CircleCI](https://circleci.com/gh/uktrade/directory-header-footer/tree/master.svg?style=svg)](https://circleci.com/gh/uktrade/directory-header-footer/tree/master)
-
-## Coverage
-
-[![codecov](https://codecov.io/gh/uktrade/directory-header-footer/branch/master/graph/badge.svg)](https://codecov.io/gh/uktrade/directory-header-footer)
+---
 
 ## Requirements
 
@@ -37,10 +36,23 @@ See https://github.com/uktrade/directory-header-footer/releases for possible val
 
 | Django setting variable          | notes                              |
 | ---------------------------------|------------------------------------|
-| SSO_LOGIN_URL                    | URL for signing in to sso          |
-| SSO_SIGNUP_URL                   | URL for signing up to sso          |
-| SSO_LOGOUT_URL                   | URL for signing out of sso         |
-| SSO_PROFILE_URL                  | URL for sso profile                |
-| SSO_PASSWORD_RESET_URL           | URL for resetting password         |
+| SSO_PROXY_LOGIN_URL                    | URL for signing in to sso          |
+| SSO_PROXY_SIGNUP_URL                   | URL for signing up to sso          |
+| SSO_PROXY_LOGOUT_URL                   | URL for signing out of sso         |
+| SSO_PROXY_PROFILE_URL                  | URL for sso profile                |
+| SSO_PROXY_PASSWORD_RESET_URL           | URL for resetting password         |
 | HEADER_FOOTER_CONTACT_US_URL     | URL for footer "contact us"        |
 | HEADER_FOOTER_CSS_ACTIVE_CLASSES | Dict guiding header's "active app" |
+
+
+[code-climate-image]: https://codeclimate.com/github/uktrade/directory-header-footer/badges/issue_count.svg
+[code-climate]: https://codeclimate.com/github/uktrade/directory-header-footer
+
+[circle-ci-image]: https://circleci.com/gh/uktrade/directory-header-footer/tree/master.svg?style=svg
+[circle-ci]: https://circleci.com/gh/uktrade/directory-header-footer/tree/master
+
+[codecov-image]: https://codecov.io/gh/uktrade/directory-header-footer/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/uktrade/directory-header-footer
+
+[gemnasium-image]: https://gemnasium.com/badges/github.com/uktrade/directory-header-footer.svg
+[gemnasium]: https://gemnasium.com/github.com/uktrade/directory-header-footer
