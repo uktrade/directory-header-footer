@@ -9,5 +9,9 @@ def pytest_configure():
         SSO_PROFILE_URL='http://profile.com',
         INSTALLED_APPS=['directory_header_footer'],
         HEADER_FOOTER_CONTACT_US_URL='http://contact-us.com',
+        TEMPLATES=[{
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'APP_DIRS': True,
+        }],
         HEADER_FOOTER_CSS_ACTIVE_CLASSES={'fab': True},
     )
