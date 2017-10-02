@@ -1,4 +1,4 @@
--r requirements.ini
+-r requirements.in
 
 codecov==2.0.9
 pytest==3.0.2
