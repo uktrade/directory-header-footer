@@ -19,8 +19,8 @@ pip install -r requirements.txt
 pip install -e git+https://git@github.com/uktrade/directory-header-footer.git@v0.2.0#egg=directory-header-footer
 ```
 
-Note: 
-The version number 'v0.2.0' in the above command should change with each release. 
+Note:
+The version number 'v0.2.0' in the above command should change with each release.
 See https://github.com/uktrade/directory-header-footer/releases for possible values.
 
 
@@ -29,21 +29,82 @@ See https://github.com/uktrade/directory-header-footer/releases for possible val
     $ git clone https://github.com/uktrade/directory-header-footer
     $ cd directory-header-footer
 
+To integrate your local changes to directory-header-footer in another project locally:
+
+    $ pip install git+file://absolute/path/to/directory-header-footer@your-current-local-branch --upgrade --force-reinstall --no-dependencies
+
+Make sure to commit all changes on directory-header-footer first.
+
 ## Testing
 	$ make test
 
-# Settings
+## Integration
 
-| Django setting variable          | notes                              |
+Add directory_header_footer to your `INSTALLED_APPS` in settings.py
+
+```
+INSTALLED_APPS = [
+    ...,
+    'directory_header_footer'
+]
+```
+
+### Context Processors
+You can integrate this repo using its built-in context processors (see context_processors.py) or you can write your own ([documentation](https://docs.djangoproject.com/en/1.11/ref/templates/api/)). If using built-in, add them to your settings.py like so:
+
+```
+TEMPLATES = [
+    {
+        'BACKEND': ...,
+        'DIRS': ...,
+        'APP_DIRS': ...,
+        'OPTIONS': {
+            'context_processors': [
+                ...,
+                'directory_header_footer.context_processors.sso_processor',
+                ('directory_header_footer.context_processors.'
+                 'header_footer_context_processor'),
+            ],
+        },
+    },
+]
+```
+
+### Settings Variables
+The built-in context processors rely on the following variables in your settings.py:
+
+| Django settings variable         | Notes                              |
 | ---------------------------------|------------------------------------|
-| SSO_PROXY_LOGIN_URL                    | URL for signing in to sso          |
-| SSO_PROXY_SIGNUP_URL                   | URL for signing up to sso          |
-| SSO_PROXY_LOGOUT_URL                   | URL for signing out of sso         |
-| SSO_PROXY_PROFILE_URL                  | URL for sso profile                |
-| SSO_PROXY_PASSWORD_RESET_URL           | URL for resetting password         |
+| SSO_PROXY_LOGIN_URL              | sso_login_url in templates         |
+| SSO_PROXY_SIGNUP_URL             | sso_register_url in templates      |
+| SSO_PROXY_LOGOUT_URL             | sso_logout_url in templates        |
+| SSO_PROFILE_URL                  | sso_profile_url in templates       |
 | HEADER_FOOTER_CONTACT_US_URL     | URL for footer "contact us"        |
-| HEADER_FOOTER_CSS_ACTIVE_CLASSES | Dict guiding header's "active app" |
+| HEADER_FOOTER_CSS_ACTIVE_CLASSES | Dict guiding header's "active app" (not used in new header/footer) |
 
+
+### Adding to templates
+After making the appropriate changes in your settings just add the header/footer to your templates with:
+
+```
+{% include 'directory_header_footer/header.html' %}
+```
+### CSS & JS
+Add these to your layout template. 
+
+For the old header/footer: 
+
+```
+<link href="{% static 'Dit-Pattern-Styling/public/css/main_old.css' %}" media="all" rel="stylesheet" />
+```
+For the new header/footer:
+
+```
+<link href="{% static 'Dit-Pattern-Styling/public/css/main.css' %}" media="all" rel="stylesheet" />
+<link href="{% static 'Dit-Pattern-Styling/public/css/compatibility.css' %}" media="all" rel="stylesheet" />
+<script src="{% static 'Dit-Pattern-Styling/public/js/third-party.js' %}"></script>
+<script src="{% static 'Dit-Pattern-Styling/public/js/script.js' %}"></script>
+```
 
 [code-climate-image]: https://codeclimate.com/github/uktrade/directory-header-footer/badges/issue_count.svg
 [code-climate]: https://codeclimate.com/github/uktrade/directory-header-footer
