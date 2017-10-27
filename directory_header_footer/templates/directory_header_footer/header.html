@@ -1,4 +1,4 @@
-{% load external_url from constants_tags %}
+{% load static %}
 <header id="header" class="static-header-footer"><a id="skip-link" href="#content" class="verbose">Skip to main content</a>
   <div id="header-bar">
     <div class="container">
@@ -21,48 +21,48 @@
   </div>
   <div id="header-menu">
     <div class="container">
-      <a href="{% external_url 'info_dit' %}" class="home"><img src="{% static 'images/DfIT_WHITE_AW.png' %}" alt="Home"/></a>
+      <a href="{{ info_dit }}" class="home"><img src="{% static 'images/DfIT_WHITE_AW.png' %}" alt="Home"/></a>
       <nav id="menu">
         <ul class="navigation level-1">
-          <li><a href="{% external_url 'great_export_home' %}">Home</a>
+          <li><a href="{{ great_export_home }}">Home</a>
           </li>
           <li><a href="#nav-export-readiness-list" id="nav-export-readiness" class="list-header">Export readiness</a>
             <ul id="nav-export-readiness-list" aria-labelledby="nav-export-readiness" class="navigation level-2">
-              <li class="items-3"><a href="{% external_url 'new_to_exporting' %}">I&#39;m new to exporting</a>
+              <li class="items-3"><a href="{{ new_to_exporting }}">I&#39;m new to exporting</a>
               </li>
-              <li class="items-3"><a href="{% external_url 'occasional_exporter' %}">I export occasionally</a>
+              <li class="items-3"><a href="{{ occasional_exporter }}">I export occasionally</a>
               </li>
-              <li class="items-3"><a href="{% external_url 'regular_exporter' %}">I&#39;m a regular exporter</a>
+              <li class="items-3"><a href="{{ regular_exporter }}">I&#39;m a regular exporter</a>
               </li>
             </ul>
           </li>
           <li><a href="#nav-guidance-list" id="nav-guidance" class="list-header">Guidance</a>
             <ul id="nav-guidance-list" aria-labelledby="nav-guidance" class="navigation level-2">
-              <li class="items-6"><a href="{% external_url 'guidance_market_research' %}">Market research</a>
+              <li class="items-6"><a href="{{ guidance_market_research }}">Market research</a>
               </li>
-              <li class="items-6"><a href="{% external_url 'guidance_customer_insight' %}">Customer insight</a>
+              <li class="items-6"><a href="{{ guidance_customer_insight }}">Customer insight</a>
               </li>
-              <li class="items-6"><a href="{% external_url 'guidance_finance' %}">Finance</a>
+              <li class="items-6"><a href="{{ guidance_finance }}">Finance</a>
               </li>
-              <li class="items-6"><a href="{% external_url 'guidance_business_planning' %}">Business planning</a>
+              <li class="items-6"><a href="{{ guidance_business_planning }}">Business planning</a>
               </li>
-              <li class="items-6"><a href="{% external_url 'guidance_getting_paid' %}">Getting paid</a>
+              <li class="items-6"><a href="{{ guidance_getting_paid }}">Getting paid</a>
               </li>
-              <li class="items-6"><a href="{% external_url 'guidance_operations_compliance' %}">Operations and compliance</a>
+              <li class="items-6"><a href="{{ guidance_operations_compliance }}">Operations and compliance</a>
               </li>
             </ul>
           </li>
           <li><a href="#nav-services-list" id="nav-services" class="list-header">Services</a>
             <ul id="nav-services-list" aria-labelledby="nav-services" class="navigation level-2">
-              <li class="items-5"><a href="{% external_url 'services_fab' %}">Find a buyer</a><span class="description">Get promoted internationally with a great.gov.uk trade profile</span>
+              <li class="items-5"><a href="{{ services_fab }}">Find a buyer</a><span class="description">Get promoted internationally with a great.gov.uk trade profile</span>
               </li>
-              <li class="items-5"><a href="{% external_url 'services_soo' %}">Selling online overseas</a><span class="description">Find online marketplaces</span>
+              <li class="items-5"><a href="{{ services_soo }}">Selling online overseas</a><span class="description">Find online marketplaces</span>
               </li>
-              <li class="items-5"><a href="{% external_url 'services_exopps' %}">Export opportunities</a><span class="description">Find and apply for overseas opportunities</span>
+              <li class="items-5"><a href="{{ services_exopps }}">Export opportunities</a><span class="description">Find and apply for overseas opportunities</span>
               </li>
-              <li class="items-5"><a href="{% external_url 'services_get_finance' %}">Get finance</a><span class="description">Get the finance you need to compete and grow</span>
+              <li class="items-5"><a href="{{ services_get_finance }}">Get finance</a><span class="description">Get the finance you need to compete and grow</span>
               </li>
-              <li class="items-5"><a href="{% external_url 'services_events' %}">Events</a><span class="description">Central hub for business and networking opportunities</span>
+              <li class="items-5"><a href="{{ services_events }}">Events</a><span class="description">Central hub for business and networking opportunities</span>
               </li>
             </ul>
           </li>
