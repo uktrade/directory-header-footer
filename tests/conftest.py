@@ -17,7 +17,7 @@ def pytest_configure():
         GUIDANCE_FINANCE='http://finance.com',
         GUIDANCE_BUSINESS_PLANNING='http://business-planning.com',
         GUIDANCE_GETTING_PAID='http://getting-paid.com',
-        OPERATIONS_COMPLIANCE='http://operations-and-compliance.com',
+        GUIDANCE_OPERATIONS_AND_COMPLIANCE='http://operations-and-compliance.com',
         SERVICES_FAB='http://export.com/fab',
         SERVICES_SOO='http://export.com/soo',
         SERVICES_EXOPPS='http://export.com/exopps',

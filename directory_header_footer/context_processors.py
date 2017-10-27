@@ -50,9 +50,9 @@ def urls_processor(request):
         'guidance_getting_paid': getattr(
             settings, 'GUIDANCE_GETTING_PAID',
             default_urls.GUIDANCE_GETTING_PAID),
-        'guidance_operations_compliance': getattr(
-            settings, 'OPERATIONS_COMPLIANCE',
-            default_urls.OPERATIONS_COMPLIANCE),
+        'guidance_operations_and_compliance': getattr(
+            settings, 'GUIDANCE_OPERATIONS_AND_COMPLIANCE',
+            default_urls.GUIDANCE_OPERATIONS_AND_COMPLIANCE),
         # services
         'services_fab': getattr(
             settings, 'SERVICES_FAB',
@@ -73,8 +73,8 @@ def urls_processor(request):
             settings, 'INFO_ABOUT',
             default_urls.INFO_ABOUT),
         'info_contact_us': getattr(
-            settings, 'INFO_CONTACT_US',
-            default_urls.INFO_CONTACT_US),
+            settings, 'INFO_CONTACT_US_DIRECTORY',
+            default_urls.INFO_CONTACT_US_DIRECTORY),
         'info_privacy_and_cookies': getattr(
             settings, 'INFO_PRIVACY_AND_COOKIES',
             default_urls.INFO_PRIVACY_AND_COOKIES),
