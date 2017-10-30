@@ -1,71 +1,75 @@
+{% load static %}
 <header id="header" class="static-header-footer"><a id="skip-link" href="#content" class="verbose">Skip to main content</a>
   <div id="header-bar">
     <div class="container">
-      <p class="government-links"><img src="/static/images/hm_government_logo_horizontal.svg" alt="HM Government logo"/><span class="partof">Part of </span><a href="https://www.great.gov.uk/" class="partof">great.gov.uk</a>
+      <p class="government-links"><img src="{% static 'images/hm-gov-horizontal.svg' %}" alt="HM Government logo"/><span class="partof">Part of </span><a href="/" class="partof">great.gov.uk</a>
       </p>
       <ul aria-label="Account links" class="navigation account-links">
         {% if not sso_is_logged_in %}
-        <li class="anonymous"><a href="{{ sso_register_url }}" class="register dead">Register</a>
+        <li class="anonymous"><a href="{{ sso_register_url }}" class="register">Register</a>
         </li>
-        <li class="anonymous"><a href="{{ sso_login_url }}" class="signin dead">Sign in</a>
+        <li class="anonymous"><a href="{{ sso_login_url }}" class="signin">Sign in</a>
         </li>
         {% else %}
-        <li class="authenticated"><a href="{{ sso_profile_url }}" class="profile dead">Profile</a>
+        <li class="authenticated"><a href="{{ sso_profile_url }}" class="profile">Profile</a>
         </li>
-        <li class="authenticated"><a href="{{ sso_logout_url }}" class="signout dead">Sign out</a>
+        <li class="authenticated"><a href="{{ sso_logout_url }}" class="signout">Sign out</a>
         </li>
         {% endif %}
       </ul><span class="greeting"></span>
     </div>
   </div>
   <div id="header-menu">
-    <div class="container"><a href="/" class="home"><img src="/static/images/DfIT_WHITE_AW.png" alt="Home"/></a>
-<nav id="menu">
-<ul class="navigation level-1">
-<li><a href="/">Home</a>
-</li>
-<li><a href="#nav-export-readiness-list" id="nav-export-readiness" class="list-header">Export readiness</a>
-<ul id="nav-export-readiness-list" aria-labelledby="nav-export-readiness" class="navigation level-2">
-<li class="lg-3 md-1"><a href="/new">I&#39;m new to exporting</a>
-</li>
-<li class="lg-3 md-1"><a href="#" class="dead">I export occasionally</a>
-</li>
-<li class="lg-3 md-1"><a href="#" class="dead">I&#39;m a regular exporter</a>
-</li>
-</ul>
-</li>
-<li><a href="#nav-guidance-list" id="nav-guidance" class="list-header">Guidance</a>
-<ul id="nav-guidance-list" aria-labelledby="nav-guidance" class="navigation level-2">
-<li class="lg-6 md-1"><a href="/market-research">Market research</a>
-</li>
-<li class="lg-6 md-1"><a href="/customer-insight">Customer insight</a>
-</li>
-<li class="lg-6 md-1"><a href="/finance">Finance</a>
-</li>
-<li class="lg-6 md-1"><a href="/business-planning">Business planning</a>
-</li>
-<li class="lg-6 md-1"><a href="/getting-paid">Getting paid</a>
-</li>
-<li class="lg-6 md-1"><a href="/operations-and-compliance">Operations and compliance</a>
-</li>
-</ul>
-</li>
-<li><a href="#nav-services-list" id="nav-services" class="list-header">Services</a>
-<ul id="nav-services-list" aria-labelledby="nav-services" class="navigation level-2">
-<li class="lg-5 md-1"><a href="#" class="dead">Find a buyer</a><span class="description">Get promoted internationally with a great.gov.uk trade profile</span>
-</li>
-<li class="lg-5 md-1"><a href="#" class="dead">Selling online overseas</a><span class="description">Find online marketplaces</span>
-</li>
-<li class="lg-5 md-1"><a href="#" class="dead">Export opportunities</a><span class="description">Find and apply for overseas opportunities</span>
-</li>
-<li class="lg-5 md-1"><a href="#" class="dead">Get finance</a><span class="description">Get the finance you need to compete and grow</span>
-</li>
-<li class="lg-5 md-1"><a href="#" class="dead">Events</a><span class="description">Central hub for business and networking opportunities</span>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
+    <div class="container">
+      <a href="{{ header_footer_urls.info_dit }}" class="home"><img src="{% static 'images/DfIT_WHITE_AW.png' %}" alt="Home"/></a>
+      <nav id="menu">
+        <ul class="navigation level-1">
+          <li><a href="{{ header_footer_urls.great_export_home }}">Home</a>
+          </li>
+          <li><a href="#nav-export-readiness-list" id="nav-export-readiness" class="list-header">Export readiness</a>
+            <ul id="nav-export-readiness-list" aria-labelledby="nav-export-readiness" class="navigation level-2">
+              <li class="items-3"><a href="{{ header_footer_urls.new_to_exporting }}">I&#39;m new to exporting</a>
+              </li>
+              <li class="items-3"><a href="{{ header_footer_urls.occasional_exporter }}">I export occasionally</a>
+              </li>
+              <li class="items-3"><a href="{{ header_footer_urls.regular_exporter }}">I&#39;m a regular exporter</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#nav-guidance-list" id="nav-guidance" class="list-header">Guidance</a>
+            <ul id="nav-guidance-list" aria-labelledby="nav-guidance" class="navigation level-2">
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_market_research }}">Market research</a>
+              </li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_customer_insight }}">Customer insight</a>
+              </li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_finance }}">Finance</a>
+              </li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_business_planning }}">Business planning</a>
+              </li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_getting_paid }}">Getting paid</a>
+              </li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_operations_and_compliance }}">Operations and compliance</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#nav-services-list" id="nav-services" class="list-header">Services</a>
+            <ul id="nav-services-list" aria-labelledby="nav-services" class="navigation level-2">
+              <li class="items-5"><a href="{{ header_footer_urls.services_fab }}">Find a buyer</a><span class="description">Get promoted internationally with a great.gov.uk trade profile</span>
+              </li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_soo }}">Selling online overseas</a><span class="description">Find online marketplaces</span>
+              </li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_exopps }}">Export opportunities</a><span class="description">Find and apply for overseas opportunities</span>
+              </li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_get_finance }}">Get finance</a><span class="description">Get the finance you need to compete and grow</span>
+              </li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_events }}">Events</a><span class="description">Central hub for business and networking opportunities</span>
+              </li>
+            </ul>
+          </li>
+          <li>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </header>
