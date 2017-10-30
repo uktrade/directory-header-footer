@@ -2,6 +2,7 @@ from unittest.mock import Mock
 import pytest
 
 from directory_header_footer import context_processors
+from directory_constants.constants import urls as default_urls
 
 
 @pytest.fixture
@@ -129,5 +130,40 @@ def test_urls_processor(rf, settings):
             'info_privacy_and_cookies': 'http://privacy-and-cookies.com',
             'info_terms_and_conditions': 'http://terms-and-conditions.com',
             'info_dit': 'http://dit.com',
+        }
+    }
+
+
+def test_urls_processor_defaults(rf, settings):
+
+    actual = context_processors.urls_processor(None)
+
+    assert actual == {
+        'header_footer_urls': {
+            'great_home': default_urls.GREAT_HOME,
+            'great_export_home': default_urls.GREAT_EXPORT_HOME,
+            'new_to_exporting': default_urls.EXPORTING_NEW,
+            'occasional_exporter': default_urls.EXPORTING_OCCASIONAL,
+            'regular_exporter': default_urls.EXPORTING_REGULAR,
+            'guidance_market_research': default_urls.GUIDANCE_MARKET_RESEARCH,
+            'guidance_customer_insight': (
+                default_urls.GUIDANCE_CUSTOMER_INSIGHT),
+            'guidance_finance': default_urls.GUIDANCE_FINANCE,
+            'guidance_business_planning': (
+                default_urls.GUIDANCE_BUSINESS_PLANNING),
+            'guidance_getting_paid': default_urls.GUIDANCE_GETTING_PAID,
+            'guidance_operations_and_compliance': (
+                default_urls.GUIDANCE_OPERATIONS_AND_COMPLIANCE),
+            'services_fab': default_urls.SERVICES_FAB,
+            'services_soo': default_urls.SERVICES_SOO,
+            'services_exopps': default_urls.SERVICES_EXOPPS,
+            'services_get_finance': default_urls.SERVICES_GET_FINANCE,
+            'services_events': default_urls.SERVICES_EVENTS,
+            'info_about': default_urls.INFO_ABOUT,
+            'info_contact_us': default_urls.INFO_CONTACT_US_DIRECTORY,
+            'info_privacy_and_cookies': default_urls.INFO_PRIVACY_AND_COOKIES,
+            'info_terms_and_conditions': (
+                default_urls.INFO_TERMS_AND_CONDITIONS),
+            'info_dit': default_urls.INFO_DIT,
         }
     }
