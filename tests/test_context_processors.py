@@ -76,3 +76,58 @@ def test_header_footer_context_processor(settings):
         'header_footer_contact_us_url': 'http://bones.com',
         'header_footer_css_active_classes': {'fab': True},
     }
+
+
+def test_urls_processor(rf, settings):
+    settings.GREAT_HOME = 'http://home.com'
+    settings.GREAT_EXPORT_HOME = 'http://export.com'
+    settings.EXPORTING_NEW = 'http://export.com/new'
+    settings.EXPORTING_OCCASIONAL = 'http://export.com/occasional'
+    settings.EXPORTING_REGULAR = 'http://export.com/regular'
+    settings.GUIDANCE_MARKET_RESEARCH = 'http://market-research.com'
+    settings.GUIDANCE_CUSTOMER_INSIGHT = 'http://customer-insight.com'
+    settings.GUIDANCE_FINANCE = 'http://finance.com'
+    settings.GUIDANCE_BUSINESS_PLANNING = 'http://business-planning.com'
+    settings.GUIDANCE_GETTING_PAID = 'http://getting-paid.com'
+    settings.GUIDANCE_OPERATIONS_AND_COMPLIANCE = (
+        'http://operations-and-compliance.com')
+    settings.SERVICES_FAB = 'http://export.com/fab'
+    settings.SERVICES_SOO = 'http://export.com/soo'
+    settings.SERVICES_EXOPPS = 'http://export.com/exopps'
+    settings.SERVICES_GET_FINANCE = 'http://export.com/get-finance'
+    settings.SERVICES_EVENTS = 'http://export.com/events'
+    settings.INFO_ABOUT = 'http://about.com'
+    settings.INFO_CONTACT_US_DIRECTORY = 'http://contact.com'
+    settings.INFO_PRIVACY_AND_COOKIES = 'http://privacy-and-cookies.com'
+    settings.INFO_TERMS_AND_CONDITIONS = 'http://terms-and-conditions.com'
+    settings.INFO_DIT = 'http://dit.com'
+
+    actual = context_processors.urls_processor(None)
+
+    assert actual == {
+        'header_footer_urls': {
+            'great_home': 'http://home.com',
+            'great_export_home': 'http://export.com',
+            'new_to_exporting': 'http://export.com/new',
+            'occasional_exporter': 'http://export.com/occasional',
+            'regular_exporter': 'http://export.com/regular',
+            'guidance_market_research': 'http://market-research.com',
+            'guidance_customer_insight': 'http://customer-insight.com',
+            'guidance_finance': 'http://finance.com',
+            'guidance_business_planning': 'http://business-planning.com',
+            'guidance_getting_paid': 'http://getting-paid.com',
+            'guidance_operations_and_compliance': (
+                'http://operations-and'
+                '-compliance.com'),
+            'services_fab': 'http://export.com/fab',
+            'services_soo': 'http://export.com/soo',
+            'services_exopps': 'http://export.com/exopps',
+            'services_get_finance': 'http://export.com/get-finance',
+            'services_events': 'http://export.com/events',
+            'info_about': 'http://about.com',
+            'info_contact_us': 'http://contact.com',
+            'info_privacy_and_cookies': 'http://privacy-and-cookies.com',
+            'info_terms_and_conditions': 'http://terms-and-conditions.com',
+            'info_dit': 'http://dit.com',
+        }
+    }
