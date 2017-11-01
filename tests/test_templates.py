@@ -102,23 +102,23 @@ def test_urls_exist_in_new_header():
         }
     }
     html = render_to_string(template_name, context)
-    hf_urls = context['header_footer_urls']
-    assert hf_urls['great_export_home'] in html
-    assert hf_urls['new_to_exporting'] in html
-    assert hf_urls['occasional_exporter'] in html
-    assert hf_urls['regular_exporter'] in html
-    assert hf_urls['guidance_market_research'] in html
-    assert hf_urls['guidance_customer_insight'] in html
-    assert hf_urls['guidance_finance'] in html
-    assert hf_urls['guidance_business_planning'] in html
-    assert hf_urls['guidance_getting_paid'] in html
-    assert hf_urls['guidance_operations_and_compliance'] in html
-    assert hf_urls['services_fab'] in html
-    assert hf_urls['services_soo'] in html
-    assert hf_urls['services_exopps'] in html
-    assert hf_urls['services_get_finance'] in html
-    assert hf_urls['services_events'] in html
-    assert hf_urls['info_dit'] in html
+    header_footer_urls = context['header_footer_urls']
+    assert header_footer_urls['great_export_home'] in html
+    assert header_footer_urls['new_to_exporting'] in html
+    assert header_footer_urls['occasional_exporter'] in html
+    assert header_footer_urls['regular_exporter'] in html
+    assert header_footer_urls['guidance_market_research'] in html
+    assert header_footer_urls['guidance_customer_insight'] in html
+    assert header_footer_urls['guidance_finance'] in html
+    assert header_footer_urls['guidance_business_planning'] in html
+    assert header_footer_urls['guidance_getting_paid'] in html
+    assert header_footer_urls['guidance_operations_and_compliance'] in html
+    assert header_footer_urls['services_fab'] in html
+    assert header_footer_urls['services_soo'] in html
+    assert header_footer_urls['services_exopps'] in html
+    assert header_footer_urls['services_get_finance'] in html
+    assert header_footer_urls['services_events'] in html
+    assert header_footer_urls['info_dit'] in html
 
 
 def test_urls_exist_in_old_header():
@@ -140,19 +140,19 @@ def test_urls_exist_in_old_header():
         }
     }
     html = render_to_string(template_name, context)
-    hf_urls = context['header_footer_urls']
-    assert hf_urls['great_home'] in html
-    assert hf_urls['great_export_home'] in html
-    assert hf_urls['new_to_exporting'] in html
-    assert hf_urls['occasional_exporter'] in html
-    assert hf_urls['regular_exporter'] in html
-    assert hf_urls['services_fab'] in html
-    assert hf_urls['services_soo'] in html
-    assert hf_urls['services_exopps'] in html
-    assert hf_urls['services_get_finance'] in html
-    assert hf_urls['services_events'] in html
-    assert hf_urls['info_about'] in html
-    assert hf_urls['info_contact_us'] in html
+    header_footer_urls = context['header_footer_urls']
+    assert header_footer_urls['great_home'] in html
+    assert header_footer_urls['great_export_home'] in html
+    assert header_footer_urls['new_to_exporting'] in html
+    assert header_footer_urls['occasional_exporter'] in html
+    assert header_footer_urls['regular_exporter'] in html
+    assert header_footer_urls['services_fab'] in html
+    assert header_footer_urls['services_soo'] in html
+    assert header_footer_urls['services_exopps'] in html
+    assert header_footer_urls['services_get_finance'] in html
+    assert header_footer_urls['services_events'] in html
+    assert header_footer_urls['info_about'] in html
+    assert header_footer_urls['info_contact_us'] in html
 
 
 def test_urls_exist_in_new_footer():
@@ -185,28 +185,28 @@ def test_urls_exist_in_new_footer():
         }
     }
     html = render_to_string(template_name, context)
-    hf_urls = context['header_footer_urls']
-    assert hf_urls['great_home'] in html
-    assert hf_urls['great_export_home'] in html
-    assert hf_urls['new_to_exporting'] in html
-    assert hf_urls['occasional_exporter'] in html
-    assert hf_urls['regular_exporter'] in html
-    assert hf_urls['guidance_market_research'] in html
-    assert hf_urls['guidance_customer_insight'] in html
-    assert hf_urls['guidance_finance'] in html
-    assert hf_urls['guidance_business_planning'] in html
-    assert hf_urls['guidance_getting_paid'] in html
-    assert hf_urls['guidance_operations_and_compliance'] in html
-    assert hf_urls['services_fab'] in html
-    assert hf_urls['services_soo'] in html
-    assert hf_urls['services_exopps'] in html
-    assert hf_urls['services_get_finance'] in html
-    assert hf_urls['services_events'] in html
-    assert hf_urls['info_about'] in html
-    assert hf_urls['info_contact_us'] in html
-    assert hf_urls['info_privacy_and_cookies'] in html
-    assert hf_urls['info_terms_and_conditions'] in html
-    assert hf_urls['info_dit'] in html
+    header_footer_urls = context['header_footer_urls']
+    assert header_footer_urls['great_home'] in html
+    assert header_footer_urls['great_export_home'] in html
+    assert header_footer_urls['new_to_exporting'] in html
+    assert header_footer_urls['occasional_exporter'] in html
+    assert header_footer_urls['regular_exporter'] in html
+    assert header_footer_urls['guidance_market_research'] in html
+    assert header_footer_urls['guidance_customer_insight'] in html
+    assert header_footer_urls['guidance_finance'] in html
+    assert header_footer_urls['guidance_business_planning'] in html
+    assert header_footer_urls['guidance_getting_paid'] in html
+    assert header_footer_urls['guidance_operations_and_compliance'] in html
+    assert header_footer_urls['services_fab'] in html
+    assert header_footer_urls['services_soo'] in html
+    assert header_footer_urls['services_exopps'] in html
+    assert header_footer_urls['services_get_finance'] in html
+    assert header_footer_urls['services_events'] in html
+    assert header_footer_urls['info_about'] in html
+    assert header_footer_urls['info_contact_us'] in html
+    assert header_footer_urls['info_privacy_and_cookies'] in html
+    assert header_footer_urls['info_terms_and_conditions'] in html
+    assert header_footer_urls['info_dit'] in html
 
 
 def test_urls_exist_in_old_footer():
@@ -230,18 +230,18 @@ def test_urls_exist_in_old_footer():
         }
     }
     html = render_to_string(template_name, context)
-    hf_urls = context['header_footer_urls']
-    assert hf_urls['great_export_home'] in html
-    assert hf_urls['new_to_exporting'] in html
-    assert hf_urls['occasional_exporter'] in html
-    assert hf_urls['regular_exporter'] in html
-    assert hf_urls['services_fab'] in html
-    assert hf_urls['services_soo'] in html
-    assert hf_urls['services_exopps'] in html
-    assert hf_urls['services_get_finance'] in html
-    assert hf_urls['services_events'] in html
-    assert hf_urls['info_about'] in html
-    assert hf_urls['info_contact_us'] in html
-    assert hf_urls['info_privacy_and_cookies'] in html
-    assert hf_urls['info_terms_and_conditions'] in html
-    assert hf_urls['info_dit'] in html
+    header_footer_urls = context['header_footer_urls']
+    assert header_footer_urls['great_export_home'] in html
+    assert header_footer_urls['new_to_exporting'] in html
+    assert header_footer_urls['occasional_exporter'] in html
+    assert header_footer_urls['regular_exporter'] in html
+    assert header_footer_urls['services_fab'] in html
+    assert header_footer_urls['services_soo'] in html
+    assert header_footer_urls['services_exopps'] in html
+    assert header_footer_urls['services_get_finance'] in html
+    assert header_footer_urls['services_events'] in html
+    assert header_footer_urls['info_about'] in html
+    assert header_footer_urls['info_contact_us'] in html
+    assert header_footer_urls['info_privacy_and_cookies'] in html
+    assert header_footer_urls['info_terms_and_conditions'] in html
+    assert header_footer_urls['info_dit'] in html
