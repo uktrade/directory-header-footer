@@ -1,21 +1,20 @@
 {% load static %}
 {% load trans from i18n %}
-{% load external_url from constants_tags %}
 <footer role="contentinfo">
   <div class="footer background--great-blue soft--top">
       <div class="outer-container">
         <div class="footer-section">
           <div class="col-8">
-            <a href="{{ great_export_home }}" title="Go to the Exporting is Great homepage">
+            <a href="{{ header_footer_urls.great_export_home }}" title="Go to the Exporting is Great homepage">
               <img src="{% static 'images/EiG-logo-stacked.svg' %}" alt="Exporting is Great logo" class="footer-logo">
             </a>
           </div>
 
           <div class="col-4">
             <ul class="footer-links footer-links--border">
-              <li class="push-half--bottom"><a href="{% external_url 'new_to_exporting' %}" title="New to exporting">{% trans 'New to exporting' %}</a></li>
-              <li class="push-half--bottom"><a href="{% external_url 'occasional_exporter' %}" title="Occasional exporter">{% trans 'Occasional exporter' %}</a></li>
-              <li><a href="{% external_url 'regular_exporter' %}" title="Regular exporter">{% trans 'Regular exporter' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.new_to_exporting }}" title="New to exporting">{% trans 'New to exporting' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.occasional_exporter }}" title="Occasional exporter">{% trans 'Occasional exporter' %}</a></li>
+              <li><a href="{{ header_footer_urls.regular_exporter }}" title="Regular exporter">{% trans 'Regular exporter' %}</a></li>
             </ul>
           </div>
         </div>
@@ -24,21 +23,21 @@
 
           <div class="col-6">
             <ul class="footer-links footer-middle-section">
-              <li class="push-half--bottom"><a href="{% external_url 'export_opportunities' %}" title="Export opportunities">{% trans 'Export opportunities' %}</a></li>
-              <li class="push-half--bottom"><a href="{% external_url 'find_a_buyer' %}" title="Find a buyer">{% trans 'Find a buyer' %}</a></li>
-              <li class="push-half--bottom"><a href="{% external_url 'selling_online_overseas' %}" title="Selling online overseas">{% trans 'Selling online overseas' %}</a></li>
-              <li class="push-half--bottom"><a href="https://export.great.gov.uk/get-finance/" title="Get Finance">{% trans 'Get Finance' %}</a></li>
-              <li class=""><a href="{% external_url 'events' %}" title="Events">{% trans 'Events' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.services_exopps }}" title="Export opportunities">{% trans 'Export opportunities' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.services_fab }}" title="Find a buyer">{% trans 'Find a buyer' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.services_soo }}" title="Selling online overseas">{% trans 'Selling online overseas' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.services_get_finance }}" title="Get Finance">{% trans 'Get Finance' %}</a></li>
+              <li class=""><a href="{{ header_footer_urls.services_events }}" title="Events">{% trans 'Events' %}</a></li>
             </ul>
           </div>
 
           <div class="col-6">
             <ul class="footer-links footer-links--border">
-              <li class="push-half--bottom"><a href="{% external_url 'about' %}" title="About great.gov.uk">{% trans 'About great.gov.uk' %}</a></li>
-              <li class="push-half--bottom"><a href="{{ header_footer_contact_us_url }}" title="">{% trans 'Contact us' %}</a></li>
-              <li class="push-half--bottom"><a href="{% external_url 'privacy' %}" title="Privacy and Cookies">{% trans 'Privacy &amp; cookies' %}</a></li>
-              <li class="push-half--bottom"><a href="{% external_url 'terms' %}" title="Terms and conditions">{% trans 'Terms &amp; conditions' %}</a></li>
-              <li><a href="{% external_url 'DIT' %}" title="Department for International Trade">{% trans 'Department for International Trade' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.info_about }}" title="About great.gov.uk">{% trans 'About great.gov.uk' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.info_contact_us }}" title="">{% trans 'Contact us' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.info_privacy_and_cookies }}" title="Privacy and Cookies">{% trans 'Privacy &amp; cookies' %}</a></li>
+              <li class="push-half--bottom"><a href="{{ header_footer_urls.info_terms_and_conditions }}" title="Terms and conditions">{% trans 'Terms &amp; conditions' %}</a></li>
+              <li><a href="{{ header_footer_urls.info_dit }}" title="Department for International Trade">{% trans 'Department for International Trade' %}</a></li>
             </ul>
           </div>
         </div>
