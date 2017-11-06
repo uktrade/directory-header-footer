@@ -388,6 +388,10 @@ table {
     color: #fff
 }
 
+#footer a {
+  line-height: inherit;
+}
+
 .list-separators li:after,
 .navigation-toggle-middle,
 .footer-links--border,
