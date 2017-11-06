@@ -98,7 +98,6 @@ def test_urls_exist_in_new_header():
             'services_get_finance': 'http://export.com/get-finance',
             'services_events': 'http://export.com/events',
             'info_about': 'http://about.com',
-            'info_dit': 'http://dit.com',
         }
     }
     html = render_to_string(template_name, context)
@@ -118,7 +117,6 @@ def test_urls_exist_in_new_header():
     assert header_footer_urls['services_exopps'] in html
     assert header_footer_urls['services_get_finance'] in html
     assert header_footer_urls['services_events'] in html
-    assert header_footer_urls['info_dit'] in html
 
 
 def test_urls_exist_in_old_header():
