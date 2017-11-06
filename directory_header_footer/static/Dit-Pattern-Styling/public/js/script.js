@@ -725,6 +725,27 @@ dit.components.menu = (new function() {
   var _expanders = [];
   var _accordion = [];
 
+  // Immediately invoked function and declaration.
+  // Because non-JS view is to show all, we might see a brief glimpse of the 
+  // open menu before JS has kicked in to add dropdown functionality. This
+  // will hide the menu when JS is on, and deactivate itself when the JS
+  // enhancement functionality is ready. 
+  dropdownViewInhibitor(true);
+  function dropdownViewInhibitor(activate) {
+    var rule = SELECTOR_MENU + " .level-2 { display: none; }";
+    var style;
+    if (arguments.length && activate) {
+      style = document.createElement("style");
+      style.setAttribute("type", "text/css");
+      style.setAttribute("id", "menu-dropdown-view-inhibitor");
+      style.appendChild(document.createTextNode(rule));
+      document.head.appendChild(style);
+    }
+    else {
+      document.head.removeChild(document.getElementById("menu-dropdown-view-inhibitor"));
+    }
+  };
+
   /* Add expanding functionality to target elements for desktop.
    **/
   function setupDesktopExpanders() {
