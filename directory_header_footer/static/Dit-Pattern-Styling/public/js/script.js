@@ -875,6 +875,7 @@ dit.components.menu = (new function() {
   this.init = function() {
     bindResponsiveListener();
     setupResponsiveView();
+    dropdownViewInhibitor(false);
   }
 
   this.reset = function() {
