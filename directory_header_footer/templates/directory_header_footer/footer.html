@@ -4,19 +4,19 @@
     <div class="link-group"><img id="footer-dit-logo" src="{% static 'images/DfIT_WHITE_AW.png' %}" height="75px"/><img id="footer-eig-logo" src="{% static 'images/eig-logo-stacked.svg' %}" height="75px"/>
     </div>
     <div class="link-group">
-      <p id="footer-links-2" class="list-heading">Export readiness</p>
-      <ul aria-labelledby="footer-links-2" class="navigation">
-        <li><a href="{{ header_footer_urls.new_to_exporting }}">I'm new to exporting</a>
+      <p id="footer-export-readiness-links" class="list-heading">Export Readiness</p>
+      <ul aria-labelledby="footer-export-readiness-links" class="navigation">
+        <li><a href="{{ header_footer_urls.new_to_exporting }}">I&#39;m new to exporting</a>
         </li>
         <li><a href="{{ header_footer_urls.occasional_exporter }}">I export occasionally</a>
         </li>
-        <li><a href="{{ header_footer_urls.regular_exporter }}">I'm a regular exporter</a>
+        <li><a href="{{ header_footer_urls.regular_exporter }}">I&#39;m a regular exporter</a>
         </li>
       </ul>
     </div>
     <div class="link-group">
-      <p id="footer-links-3" class="list-heading">Guidance</p>
-      <ul aria-labelledby="footer-links-3" class="navigation">
+      <p id="footer-guidance-links" class="list-heading">Guidance</p>
+      <ul aria-labelledby="footer-guidance-links" class="navigation">
         <li><a href="{{ header_footer_urls.guidance_market_research }}">Market research</a>
         </li>
         <li><a href="{{ header_footer_urls.guidance_customer_insight }}">Customer insight</a>
@@ -32,8 +32,8 @@
       </ul>
     </div>
     <div class="link-group">
-      <p id="footer-links-4" class="list-heading">Services</p>
-      <ul aria-labelledby="footer-links-4" class="navigation">
+      <p id="footer-services-links" class="list-heading">Services</p>
+      <ul aria-labelledby="footer-services-links" class="navigation">
         <li><a href="{{ header_footer_urls.services_fab }}">Find a buyer</a>
         </li>
         <li><a href="{{ header_footer_urls.services_soo }}">Selling online overseas</a>
@@ -47,24 +47,28 @@
       </ul>
     </div>
   </nav>
-<div class="site-links container">
-  <ul class="navigation">
-    <li><a href="{{ header_footer_urls.great_home }}">Part of great.gov.uk</a>
-    </li>
-    <li><a href="{{ header_footer_urls.info_about }}">About</a>
-    </li>
-    <li><a href="{{ header_footer_urls.info_contact_us }}">Contact us</a>
-    </li>
-    <li><a href="{{ header_footer_urls.info_privacy_and_cookies }}">Privacy and cookies</a>
-    </li>
-    <li><a href="{{ header_footer_urls.info_terms_and_conditions }}">Terms and conditions</a>
-    </li>
-    <li><a href="{{ header_footer_urls.info_dit }}">Department for International Trade</a>
-    </li>
-  </ul>
-</div>
-<div class="global-footer">
-  <p class="container"><a href="https://www.gov.uk/"><img src="/static/images/hm_government_logo_horizontal.svg" alt="HM Government"/></a><span>&copy; Crown copyright 2017. All rights reserved.</span>
-  </p>
-</div>
+  <div class="site-links container">
+    <ul class="navigation">
+      <li><a href="{{ header_footer_urls.great_home }}" class="">Part of great.gov.uk</a>
+      </li>
+      <li><a href="{{ header_footer_urls.info_about }}" class="">About</a>
+      </li>
+      <li><a href="{{ header_footer_urls.info_contact_us }}" class="">Contact us</a>
+      </li>
+      <li><a href="{{ header_footer_urls.info_privacy_and_cookies }}" class="">Privacy and cookies</a>
+      </li>
+      <li><a href="{{ header_footer_urls.info_terms_and_conditions }}" class="">Terms and conditions</a>
+      </li>
+      <li><a href="{{ header_footer_urls.info_dit }}" class="">Department for International Trade on GOV.UK</a>
+      </li>
+    </ul>
+  </div>
+  <div class="global-footer">
+    <p class="container"><a href="https://www.gov.uk/"><img src="{% static 'images/hm-gov-horizontal.svg' %}" alt="HM Government"/></a><span>&copy; Crown copyright 2017. All rights reserved.</span>
+    </p>
+  </div>
+</footer>
+ed.</span>
+    </p>
+  </div>
 </footer>
