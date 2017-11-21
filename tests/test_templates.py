@@ -123,7 +123,6 @@ def test_urls_exist_in_old_header():
     template_name = 'directory_header_footer/header_old.html'
     context = {
         'header_footer_urls': {
-            'great_home': 'http://home.com',
             'great_export_home': 'http://export.com',
             'new_to_exporting': 'http://export.com/new',
             'occasional_exporter': 'http://export.com/occasional',
@@ -139,7 +138,6 @@ def test_urls_exist_in_old_header():
     }
     html = render_to_string(template_name, context)
     header_footer_urls = context['header_footer_urls']
-    assert header_footer_urls['great_home'] in html
     assert header_footer_urls['great_export_home'] in html
     assert header_footer_urls['new_to_exporting'] in html
     assert header_footer_urls['occasional_exporter'] in html
@@ -157,7 +155,6 @@ def test_urls_exist_in_new_footer():
     template_name = 'directory_header_footer/footer.html'
     context = {
         'header_footer_urls': {
-            'great_home': 'http://home.com',
             'great_export_home': 'http://export.com',
             'new_to_exporting': 'http://export.com/new',
             'occasional_exporter': 'http://export.com/occasional',
@@ -184,7 +181,6 @@ def test_urls_exist_in_new_footer():
     }
     html = render_to_string(template_name, context)
     header_footer_urls = context['header_footer_urls']
-    assert header_footer_urls['great_home'] in html
     assert header_footer_urls['great_export_home'] in html
     assert header_footer_urls['new_to_exporting'] in html
     assert header_footer_urls['occasional_exporter'] in html
@@ -243,3 +239,16 @@ def test_urls_exist_in_old_footer():
     assert header_footer_urls['info_privacy_and_cookies'] in html
     assert header_footer_urls['info_terms_and_conditions'] in html
     assert header_footer_urls['info_dit'] in html
+
+
+@pytest.mark.parametrize('template_name', (
+    'directory_header_footer/header.html',
+    'directory_header_footer/footer.html',
+))
+def test_new_service_names_in_new_header_and_footer(template_name):
+    html = render_to_string(template_name)
+    assert 'Create an export profile' in html
+    assert 'Sell online overseas' in html
+    assert 'Find export opportunities' in html
+    assert 'Get finance' in html
+    assert 'Attend events' in html

@@ -1,10 +1,10 @@
 {% load static %}
 <footer id="footer" class="static-header-footer">
   <nav class="container">
-    <div class="link-group"><img id="footer-dit-logo" src="{% static 'images/DfIT_WHITE_AW.png' %}" height="75px"/><img id="footer-eig-logo" src="{% static 'images/eig-logo-stacked.svg' %}" height="75px"/>
+    <div class="link-group"><img id="footer-dit-logo" src="{% static 'images/DfIT_WHITE_AW.png' %}" height="70px" alt="Department for International Trade"/><img id="footer-eig-logo" src="{% static 'images/eig-logo-stacked.svg' %}" height="82px" alt="Exporting is Great"/>
     </div>
     <div class="link-group">
-      <p id="footer-export-readiness-links" class="list-heading">Export Readiness</p>
+      <p id="footer-export-readiness-links" class="list-heading">Export readiness</p>
       <ul aria-labelledby="footer-export-readiness-links" class="navigation">
         <li><a href="{{ header_footer_urls.new_to_exporting }}">I&#39;m new to exporting</a>
         </li>
@@ -34,23 +34,21 @@
     <div class="link-group">
       <p id="footer-services-links" class="list-heading">Services</p>
       <ul aria-labelledby="footer-services-links" class="navigation">
-        <li><a href="{{ header_footer_urls.services_fab }}">Find a buyer</a>
+        <li><a href="{{ header_footer_urls.services_fab }}">Create an export profile</a>
         </li>
-        <li><a href="{{ header_footer_urls.services_soo }}">Selling online overseas</a>
+        <li><a href="{{ header_footer_urls.services_soo }}">Sell online overseas</a>
         </li>
-        <li><a href="{{ header_footer_urls.services_exopps }}">Export opportunities</a>
+        <li><a href="{{ header_footer_urls.services_exopps }}">Find export opportunities</a>
         </li>
         <li><a href="{{ header_footer_urls.services_get_finance }}">Get finance</a>
         </li>
-        <li><a href="{{ header_footer_urls.services_events }}">Events</a>
+        <li><a href="{{ header_footer_urls.services_events }}">Attend events</a>
         </li>
       </ul>
     </div>
   </nav>
   <div class="site-links container">
     <ul class="navigation">
-      <li><a href="{{ header_footer_urls.great_home }}" class="">Part of great.gov.uk</a>
-      </li>
       <li><a href="{{ header_footer_urls.info_about }}" class="">About</a>
       </li>
       <li><a href="{{ header_footer_urls.info_contact_us }}" class="">Contact us</a>
@@ -64,11 +62,7 @@
     </ul>
   </div>
   <div class="global-footer">
-    <p class="container"><a href="https://www.gov.uk/"><img src="{% static 'images/hm-gov-horizontal.svg' %}" alt="HM Government"/></a><span>&copy; Crown copyright 2017. All rights reserved.</span>
-    </p>
-  </div>
-</footer>
-ed.</span>
+    <p class="container"><span>&copy; Crown copyright 2017. All rights reserved.</span>
     </p>
   </div>
 </footer>
