@@ -5,17 +5,15 @@
       <p class="government-links"><img src="{% static 'images/hm-gov-horizontal.svg' %}" alt="HM Government logo"/><span class="partof">Part of </span><a href="{{ header_footer_urls.great_home }}" class="partof">great.gov.uk</a>
       </p>
       <ul aria-label="Account links" class="navigation account-links">
-        {% if not sso_is_logged_in %}
-        <li class="anonymous"><a href="{{ sso_register_url }}" class="register">Register</a>
-        </li>
-        <li class="anonymous"><a href="{{ sso_login_url }}" class="signin">Sign in</a>
-        </li>
-        {% else %}
-        <li class="authenticated"><a href="{{ sso_profile_url }}" class="profile">Profile</a>
-        </li>
-        <li class="authenticated"><a href="{{ sso_logout_url }}" class="signout">Sign out</a>
-        </li>
-        {% endif %}
+        {% block login_state %}
+          {% if not sso_is_logged_in %}
+          <li class="anonymous"><a href="{{ sso_register_url }}" class="register">Register</a></li>
+          <li class="anonymous"><a href="{{ sso_login_url }}" class="signin">Sign in</a></li>
+          {% else %}
+          <li class="authenticated"><a href="{{ sso_profile_url }}" class="profile">Profile</a></li>
+          <li class="authenticated"><a href="{{ sso_logout_url }}" class="signout">Sign out</a></li>
+          {% endif %}
+        {% endblock %}
       </ul><span class="greeting"></span>
     </div>
   </div>
