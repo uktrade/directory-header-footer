@@ -167,3 +167,58 @@ def test_urls_processor_defaults(rf, settings):
             'info_dit': default_urls.INFO_DIT,
         }
     }
+
+
+def test_urls_processor_defaults_explicitly_none(rf, settings):
+    settings.GREAT_HOME = None
+    settings.GREAT_EXPORT_HOME = None
+    settings.EXPORTING_NEW = None
+    settings.EXPORTING_OCCASIONAL = None
+    settings.EXPORTING_REGULAR = None
+    settings.GUIDANCE_MARKET_RESEARCH = None
+    settings.GUIDANCE_CUSTOMER_INSIGHT = None
+    settings.GUIDANCE_BUSINESS_PLANNING = None
+    settings.GUIDANCE_GETTING_PAID = None
+    settings.GUIDANCE_OPERATIONS_AND_COMPLIANCE = None
+    settings.SERVICES_FAB = None
+    settings.SERVICES_SOO = None
+    settings.SERVICES_EXOPPS = None
+    settings.SERVICES_GET_FINANCE = None
+    settings.SERVICES_EVENTS = None
+    settings.INFO_ABOUT = None
+    settings.INFO_CONTACT_US_DIRECTORY = None
+    settings.INFO_PRIVACY_AND_COOKIES = None
+    settings.INFO_TERMS_AND_CONDITIONS = None
+    settings.INFO_DIT = None
+
+    actual = context_processors.urls_processor(None)
+
+    assert actual == {
+        'header_footer_urls': {
+            'great_home': default_urls.GREAT_HOME,
+            'great_export_home': default_urls.GREAT_EXPORT_HOME,
+            'new_to_exporting': default_urls.EXPORTING_NEW,
+            'occasional_exporter': default_urls.EXPORTING_OCCASIONAL,
+            'regular_exporter': default_urls.EXPORTING_REGULAR,
+            'guidance_market_research': default_urls.GUIDANCE_MARKET_RESEARCH,
+            'guidance_customer_insight': (
+                default_urls.GUIDANCE_CUSTOMER_INSIGHT),
+            'guidance_finance': default_urls.GUIDANCE_FINANCE,
+            'guidance_business_planning': (
+                default_urls.GUIDANCE_BUSINESS_PLANNING),
+            'guidance_getting_paid': default_urls.GUIDANCE_GETTING_PAID,
+            'guidance_operations_and_compliance': (
+                default_urls.GUIDANCE_OPERATIONS_AND_COMPLIANCE),
+            'services_fab': default_urls.SERVICES_FAB,
+            'services_soo': default_urls.SERVICES_SOO,
+            'services_exopps': default_urls.SERVICES_EXOPPS,
+            'services_get_finance': default_urls.SERVICES_GET_FINANCE,
+            'services_events': default_urls.SERVICES_EVENTS,
+            'info_about': default_urls.INFO_ABOUT,
+            'info_contact_us': default_urls.INFO_CONTACT_US_DIRECTORY,
+            'info_privacy_and_cookies': default_urls.INFO_PRIVACY_AND_COOKIES,
+            'info_terms_and_conditions': (
+                default_urls.INFO_TERMS_AND_CONDITIONS),
+            'info_dit': default_urls.INFO_DIT,
+        }
+    }
