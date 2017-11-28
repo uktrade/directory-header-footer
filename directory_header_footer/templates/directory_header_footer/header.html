@@ -1,66 +1,57 @@
 {% load static %}
 <header id="header" class="static-header-footer"><a id="skip-link" href="#content" class="verbose">Skip to main content</a>
   <div id="header-bar">
-    <div class="container">
-      <p class="government-links"><img src="{% static 'images/hm-gov-horizontal.svg' %}" alt="HM Government logo"/><span class="partof">Part of </span><a href="{{ header_footer_urls.great_home }}" class="partof">great.gov.uk</a>
-      </p>
-      <ul aria-label="Account links" class="navigation account-links">
+    <div class="container top-bar">
+      <div class="account-locale-links">
+        <ul aria-label="Account links" class="navigation account-links">
         {% block login_state %}
-          {% if not sso_is_logged_in %}
+        {% if not sso_is_logged_in %}
           <li class="anonymous"><a href="{{ sso_register_url }}" class="register">Register</a></li>
           <li class="anonymous"><a href="{{ sso_login_url }}" class="signin">Sign in</a></li>
-          {% else %}
+        {% else %}
           <li class="authenticated"><a href="{{ sso_profile_url }}" class="profile">Profile</a></li>
           <li class="authenticated"><a href="{{ sso_logout_url }}" class="signout">Sign out</a></li>
-          {% endif %}
+        {% endif %}
         {% endblock %}
-      </ul><span class="greeting"></span>
+        </ul><span class="greeting"></span>
+      </div>
+    </div>
+    <div class="container">
+      <a class="dit-logo" href="{{ header_footer_urls.great_export_home }}">
+        <img src="{% static 'images/DfIT_WHITE_AW.png' %}" alt="Home">
+      </a>
     </div>
   </div>
   <div id="header-menu">
-    <div class="container"><a href="{{ header_footer_urls.great_export_home }}" class="home"><img src="{% static 'images/DfIT_WHITE_AW.png' %}" alt="Home"/></a>
+    <div class="container">
       <nav id="menu">
         <ul class="navigation level-1">
           <li><a href="{{ header_footer_urls.great_export_home }}">Home</a>
           </li>
-          <li><a href="#export-readiness-links-list" id="export-readiness-links" class="list-header">Export Readiness</a>
+          <li><a href="#export-readiness-links-list" id="export-readiness-links" class="list-header">Export readiness</a>
             <ul id="export-readiness-links-list" aria-labelledby="export-readiness-links" class="navigation level-2">
-              <li class="items-3"><a href="{{ header_footer_urls.new_to_exporting }}">I&#39;m new to exporting</a>
-              </li>
-              <li class="items-3"><a href="{{ header_footer_urls.occasional_exporter }}">I export occasionally</a>
-              </li>
-              <li class="items-3"><a href="{{ header_footer_urls.regular_exporter }}">I&#39;m a regular exporter</a>
-              </li>
+              <li class="items-3"><a href="{{ header_footer_urls.new_to_exporting }}">I&#39;m new to exporting</a></li>
+              <li class="items-3"><a href="{{ header_footer_urls.occasional_exporter }}">I export occasionally</a></li>
+              <li class="items-3"><a href="{{ header_footer_urls.regular_exporter }}">I&#39;m a regular exporter</a></li>
             </ul>
           </li>
           <li><a href="#guidance-links-list" id="guidance-links" class="list-header">Guidance</a>
             <ul id="guidance-links-list" aria-labelledby="guidance-links" class="navigation level-2">
-              <li class="items-6"><a href="{{ header_footer_urls.guidance_market_research }}">Market research</a>
-              </li>
-              <li class="items-6"><a href="{{ header_footer_urls.guidance_customer_insight }}">Customer insight</a>
-              </li>
-              <li class="items-6"><a href="{{ header_footer_urls.guidance_finance }}">Finance</a>
-              </li>
-              <li class="items-6"><a href="{{ header_footer_urls.guidance_business_planning }}">Business planning</a>
-              </li>
-              <li class="items-6"><a href="{{ header_footer_urls.guidance_getting_paid }}">Getting paid</a>
-              </li>
-              <li class="items-6"><a href="{{ header_footer_urls.guidance_operations_and_compliance }}">Operations and compliance</a>
-              </li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_market_research }}">Market research</a></li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_customer_insight }}">Customer insight</a></li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_finance }}">Finance</a></li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_business_planning }}">Business planning</a></li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_getting_paid }}">Getting paid</a></li>
+              <li class="items-6"><a href="{{ header_footer_urls.guidance_operations_and_compliance }}">Operations and compliance</a></li>
             </ul>
           </li>
           <li><a href="#services-links-list" id="services-links" class="list-header">Services</a>
             <ul id="services-links-list" aria-labelledby="services-links" class="navigation level-2">
-              <li class="items-5"><a href="{{ header_footer_urls.services_fab }}">Find a buyer</a><span class="description">Get promoted internationally with a great.gov.uk trade profile</span>
-              </li>
-              <li class="items-5"><a href="{{ header_footer_urls.services_soo }}">Selling online overseas</a><span class="description">Find online marketplaces</span>
-              </li>
-              <li class="items-5"><a href="{{ header_footer_urls.services_exopps }}">Export opportunities</a><span class="description">Find and apply for overseas opportunities</span>
-              </li>
-              <li class="items-5"><a href="{{ header_footer_urls.services_get_finance }}">Get finance</a><span class="description">Get the finance you need to compete and grow</span>
-              </li>
-              <li class="items-5"><a href="{{ header_footer_urls.services_events }}">Events</a><span class="description">Central hub for business and networking opportunities</span>
-              </li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_exopps }}">Find export opportunities</a><span class="description">Find and apply for overseas opportunities</span></li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_soo }}">Sell online overseas</a><span class="description">Find the right marketplace for your business and access special offers for sellers</span></li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_fab }}">Create an export profile</a><span class="description">Get promoted internationally with a great.gov.uk trade profile</span></li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_get_finance }}">Get finance</a><span class="description">Get the finance you need to compete and grow</span></li>
+              <li class="items-5"><a href="{{ header_footer_urls.services_events }}">Attend events</a><span class="description">Sign up for networking events and trade missions</span></li>
             </ul>
           </li>
         </ul>
