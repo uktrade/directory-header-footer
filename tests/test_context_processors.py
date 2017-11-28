@@ -70,12 +70,14 @@ def test_sso_user(request_logged_in, sso_user):
 def test_header_footer_context_processor(settings):
     settings.HEADER_FOOTER_CONTACT_US_URL = 'http://bones.com'
     settings.HEADER_FOOTER_CSS_ACTIVE_CLASSES = {'fab': True}
+    settings.HEADER_FOOTER_LANGUAGE_SELECT = True
 
     context = context_processors.header_footer_context_processor(None)
 
     assert context == {
         'header_footer_contact_us_url': 'http://bones.com',
         'header_footer_css_active_classes': {'fab': True},
+        'header_footer_language_select': True
     }
 
 

@@ -157,7 +157,6 @@ def test_urls_exist_in_new_footer():
     template_name = 'directory_header_footer/footer.html'
     context = {
         'header_footer_urls': {
-            'great_home': 'http://home.com',
             'great_export_home': 'http://export.com',
             'new_to_exporting': 'http://export.com/new',
             'occasional_exporter': 'http://export.com/occasional',
@@ -184,7 +183,6 @@ def test_urls_exist_in_new_footer():
     }
     html = render_to_string(template_name, context)
     header_footer_urls = context['header_footer_urls']
-    assert header_footer_urls['great_home'] in html
     assert header_footer_urls['great_export_home'] in html
     assert header_footer_urls['new_to_exporting'] in html
     assert header_footer_urls['occasional_exporter'] in html

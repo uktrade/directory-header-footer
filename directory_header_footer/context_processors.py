@@ -60,4 +60,5 @@ def header_footer_context_processor(request):
     return {
         'header_footer_contact_us_url': settings.HEADER_FOOTER_CONTACT_US_URL,
         'header_footer_css_active_classes': active_classes,
+        'header_footer_language_select': settings.HEADER_FOOTER_LANGUAGE_SELECT
     }
