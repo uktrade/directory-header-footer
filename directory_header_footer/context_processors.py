@@ -1,3 +1,5 @@
+from functools import partial
+
 from django.conf import settings
 
 from directory_constants.constants import urls as default_urls
@@ -5,13 +7,13 @@ from directory_constants.constants import urls as default_urls
 
 def sso_processor(request):
     url = request.build_absolute_uri()
-    login_url = settings.SSO_PROXY_LOGIN_URL
+    add_next = partial('{0}?next={url}'.format, url=url)
     return {
         'sso_user': request.sso_user,
         'sso_is_logged_in': request.sso_user is not None,
-        'sso_login_url': '{0}?next={1}'.format(login_url, url),
-        'sso_register_url': settings.SSO_PROXY_SIGNUP_URL,
-        'sso_logout_url': settings.SSO_PROXY_LOGOUT_URL,
+        'sso_login_url': add_next(settings.SSO_PROXY_LOGIN_URL),
+        'sso_register_url': add_next(settings.SSO_PROXY_SIGNUP_URL),
+        'sso_logout_url': add_next(settings.SSO_PROXY_LOGOUT_URL),
         'sso_profile_url': settings.SSO_PROFILE_URL,
     }
 

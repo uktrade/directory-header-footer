@@ -39,9 +39,11 @@ def test_sso_profile_url(request_logged_in, settings):
 
 
 def test_sso_register_url_url(request_logged_in, settings):
-    settings.SSO_PROXY_SIGNUP_URL = expected = 'http://www.example.com/signup/'
+    settings.SSO_PROXY_SIGNUP_URL = 'http://www.example.com/signup/'
     context = context_processors.sso_processor(request_logged_in)
-    assert context['sso_register_url'] == expected
+    assert context['sso_register_url'] == (
+        'http://www.example.com/signup/?next=http://testserver/'
+    )
 
 
 def test_sso_logged_out(request_logged_out):
@@ -57,9 +59,11 @@ def test_sso_login_url(request_logged_in, settings):
 
 
 def test_sso_logout_url(request_logged_in, settings):
-    settings.SSO_PROXY_LOGOUT_URL = expected = 'http://www.example.com/logout/'
+    settings.SSO_PROXY_LOGOUT_URL = 'http://www.example.com/logout/'
     context = context_processors.sso_processor(request_logged_in)
-    assert context['sso_logout_url'] == expected
+    assert context['sso_logout_url'] == (
+        'http://www.example.com/logout/?next=http://testserver/'
+    )
 
 
 def test_sso_user(request_logged_in, sso_user):
