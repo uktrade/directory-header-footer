@@ -21,6 +21,8 @@ CODECOV := \
 test: flake8 pytest
 	$(CODECOV)
 
+test_last_failed: test pytest_args='--last-failed'
+
 compile_requirements:
 	python3 -m piptools compile requirements.in
 
