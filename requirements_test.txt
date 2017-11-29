@@ -24,3 +24,4 @@ pytz==2017.2              # via django
 requests==2.18.4          # via codecov
 setuptools-git==1.2
 urllib3==1.22             # via requests
+whitenoise==3.1
