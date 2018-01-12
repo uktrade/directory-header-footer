@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file requirements_test.txt requirements_test.in
 #
--e git+https://github.com/uktrade/directory-constants.git@v6.0.0#egg=directory_constants
+-e git+https://github.com/uktrade/directory-constants.git@v6.4.0#egg=directory_constants
 beautifulsoup4==4.6.0
 certifi==2017.7.27.1      # via requests
 chardet==3.0.4            # via requests

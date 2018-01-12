@@ -626,6 +626,10 @@
   display: none;
 }
 
+#footer-custom-page-link.list-heading {
+  margin-bottom: 70px;
+}
+
 @media screen and (max-width: 767px) {
   #menu {
     background-color: #00549f;
