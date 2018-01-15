@@ -4,12 +4,19 @@
     <div class="link-group"><img id="footer-dit-logo" src="{% static 'images/DfIT_WHITE_AW.png' %}" height="70px" alt="Department for International Trade"/><img id="footer-eig-logo" src="{% static 'images/eig-logo-stacked.svg' %}" height="82px" alt="Exporting is Great"/>
     </div>
     <div class="link-group">
-      <p id="footer-export-readiness-links" class="list-heading">Export readiness</p>
-      <ul aria-labelledby="footer-export-readiness-links" class="navigation">
-        <li><a id="footer-export-readiness-new" href="{{ header_footer_urls.new_to_exporting }}">I&#39;m new to exporting</a></li>
-        <li><a id="footer-export-readiness-occasional" href="{{ header_footer_urls.occasional_exporter }}">I export occasionally</a></li>
-        <li><a id="footer-export-readiness-regular" href="{{ header_footer_urls.regular_exporter }}">I&#39;m a regular exporter</a></li>
-      </ul>
+      <div>
+        <a href="{{ header_footer_urls.custom_page }}">
+          <p class="list-heading" id="footer-custom-page-link">Your export journey</p>
+        </a>
+      </div>
+      <div>
+        <p id="footer-export-readiness-links" class="list-heading">Export readiness</p>
+        <ul aria-labelledby="footer-export-readiness-links" class="navigation">
+          <li><a id="footer-export-readiness-new" href="{{ header_footer_urls.new_to_exporting }}">I&#39;m new to exporting</a></li>
+          <li><a id="footer-export-readiness-occasional" href="{{ header_footer_urls.occasional_exporter }}">I export occasionally</a></li>
+          <li><a id="footer-export-readiness-regular" href="{{ header_footer_urls.regular_exporter }}">I&#39;m a regular exporter</a></li>
+        </ul>
+      </div>
     </div>
     <div class="link-group">
       <p id="footer-guidance-links" class="list-heading">Guidance</p>

@@ -25,6 +25,7 @@ def urls_processor(request):
         'header_footer_urls': {
             'great_home': get_url('GREAT_HOME'),
             'great_export_home': get_url('GREAT_EXPORT_HOME'),
+            'custom_page': get_url('CUSTOM_PAGE'),
             # personas
             'new_to_exporting': get_url('EXPORTING_NEW'),
             'occasional_exporter': get_url('EXPORTING_OCCASIONAL'),

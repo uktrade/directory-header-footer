@@ -94,8 +94,7 @@ def test_urls_processor(rf, settings):
     settings.GUIDANCE_FINANCE = 'http://finance.com'
     settings.GUIDANCE_BUSINESS_PLANNING = 'http://business-planning.com'
     settings.GUIDANCE_GETTING_PAID = 'http://getting-paid.com'
-    settings.GUIDANCE_OPERATIONS_AND_COMPLIANCE = (
-        'http://operations-and-compliance.com')
+    settings.GUIDANCE_OPERATIONS_AND_COMPLIANCE = 'http://compliance.com'
     settings.SERVICES_FAB = 'http://export.com/fab'
     settings.SERVICES_SOO = 'http://export.com/soo'
     settings.SERVICES_EXOPPS = 'http://export.com/exopps'
@@ -106,71 +105,68 @@ def test_urls_processor(rf, settings):
     settings.INFO_PRIVACY_AND_COOKIES = 'http://privacy-and-cookies.com'
     settings.INFO_TERMS_AND_CONDITIONS = 'http://terms-and-conditions.com'
     settings.INFO_DIT = 'http://dit.com'
+    settings.CUSTOM_PAGE = 'http://custom.com'
 
     actual = context_processors.urls_processor(None)
-
+    expected_urls = {
+        'great_home': 'http://home.com',
+        'great_export_home': 'http://export.com',
+        'new_to_exporting': 'http://export.com/new',
+        'occasional_exporter': 'http://export.com/occasional',
+        'regular_exporter': 'http://export.com/regular',
+        'guidance_market_research': 'http://market-research.com',
+        'guidance_customer_insight': 'http://customer-insight.com',
+        'guidance_finance': 'http://finance.com',
+        'guidance_business_planning': 'http://business-planning.com',
+        'guidance_getting_paid': 'http://getting-paid.com',
+        'guidance_operations_and_compliance': 'http://compliance.com',
+        'services_fab': 'http://export.com/fab',
+        'services_soo': 'http://export.com/soo',
+        'services_exopps': 'http://export.com/exopps',
+        'services_get_finance': 'http://export.com/get-finance',
+        'services_events': 'http://export.com/events',
+        'info_about': 'http://about.com',
+        'info_contact_us': 'http://contact.com',
+        'info_privacy_and_cookies': 'http://privacy-and-cookies.com',
+        'info_terms_and_conditions': 'http://terms-and-conditions.com',
+        'info_dit': 'http://dit.com',
+        'custom_page': 'http://custom.com',
+    }
     assert actual == {
-        'header_footer_urls': {
-            'great_home': 'http://home.com',
-            'great_export_home': 'http://export.com',
-            'new_to_exporting': 'http://export.com/new',
-            'occasional_exporter': 'http://export.com/occasional',
-            'regular_exporter': 'http://export.com/regular',
-            'guidance_market_research': 'http://market-research.com',
-            'guidance_customer_insight': 'http://customer-insight.com',
-            'guidance_finance': 'http://finance.com',
-            'guidance_business_planning': 'http://business-planning.com',
-            'guidance_getting_paid': 'http://getting-paid.com',
-            'guidance_operations_and_compliance': (
-                'http://operations-and'
-                '-compliance.com'),
-            'services_fab': 'http://export.com/fab',
-            'services_soo': 'http://export.com/soo',
-            'services_exopps': 'http://export.com/exopps',
-            'services_get_finance': 'http://export.com/get-finance',
-            'services_events': 'http://export.com/events',
-            'info_about': 'http://about.com',
-            'info_contact_us': 'http://contact.com',
-            'info_privacy_and_cookies': 'http://privacy-and-cookies.com',
-            'info_terms_and_conditions': 'http://terms-and-conditions.com',
-            'info_dit': 'http://dit.com',
-        }
+        'header_footer_urls': expected_urls
     }
 
 
 def test_urls_processor_defaults(rf, settings):
 
     actual = context_processors.urls_processor(None)
-
-    assert actual == {
-        'header_footer_urls': {
-            'great_home': default_urls.GREAT_HOME,
-            'great_export_home': default_urls.GREAT_EXPORT_HOME,
-            'new_to_exporting': default_urls.EXPORTING_NEW,
-            'occasional_exporter': default_urls.EXPORTING_OCCASIONAL,
-            'regular_exporter': default_urls.EXPORTING_REGULAR,
-            'guidance_market_research': default_urls.GUIDANCE_MARKET_RESEARCH,
-            'guidance_customer_insight': (
-                default_urls.GUIDANCE_CUSTOMER_INSIGHT),
-            'guidance_finance': default_urls.GUIDANCE_FINANCE,
-            'guidance_business_planning': (
-                default_urls.GUIDANCE_BUSINESS_PLANNING),
-            'guidance_getting_paid': default_urls.GUIDANCE_GETTING_PAID,
-            'guidance_operations_and_compliance': (
-                default_urls.GUIDANCE_OPERATIONS_AND_COMPLIANCE),
-            'services_fab': default_urls.SERVICES_FAB,
-            'services_soo': default_urls.SERVICES_SOO,
-            'services_exopps': default_urls.SERVICES_EXOPPS,
-            'services_get_finance': default_urls.SERVICES_GET_FINANCE,
-            'services_events': default_urls.SERVICES_EVENTS,
-            'info_about': default_urls.INFO_ABOUT,
-            'info_contact_us': default_urls.INFO_CONTACT_US_DIRECTORY,
-            'info_privacy_and_cookies': default_urls.INFO_PRIVACY_AND_COOKIES,
-            'info_terms_and_conditions': (
-                default_urls.INFO_TERMS_AND_CONDITIONS),
-            'info_dit': default_urls.INFO_DIT,
-        }
+    expected_urls = {
+        'great_home': default_urls.GREAT_HOME,
+        'great_export_home': default_urls.GREAT_EXPORT_HOME,
+        'new_to_exporting': default_urls.EXPORTING_NEW,
+        'occasional_exporter': default_urls.EXPORTING_OCCASIONAL,
+        'regular_exporter': default_urls.EXPORTING_REGULAR,
+        'guidance_market_research': default_urls.GUIDANCE_MARKET_RESEARCH,
+        'guidance_customer_insight': default_urls.GUIDANCE_CUSTOMER_INSIGHT,
+        'guidance_finance': default_urls.GUIDANCE_FINANCE,
+        'guidance_business_planning': default_urls.GUIDANCE_BUSINESS_PLANNING,
+        'guidance_getting_paid': default_urls.GUIDANCE_GETTING_PAID,
+        'guidance_operations_and_compliance': (
+            default_urls.GUIDANCE_OPERATIONS_AND_COMPLIANCE),
+        'services_fab': default_urls.SERVICES_FAB,
+        'services_soo': default_urls.SERVICES_SOO,
+        'services_exopps': default_urls.SERVICES_EXOPPS,
+        'services_get_finance': default_urls.SERVICES_GET_FINANCE,
+        'services_events': default_urls.SERVICES_EVENTS,
+        'info_about': default_urls.INFO_ABOUT,
+        'info_contact_us': default_urls.INFO_CONTACT_US_DIRECTORY,
+        'info_privacy_and_cookies': default_urls.INFO_PRIVACY_AND_COOKIES,
+        'info_terms_and_conditions': default_urls.INFO_TERMS_AND_CONDITIONS,
+        'info_dit': default_urls.INFO_DIT,
+        'custom_page': default_urls.CUSTOM_PAGE,
     }
+
+    assert actual == {'header_footer_urls': expected_urls}
 
 
 def test_urls_processor_defaults_explicitly_none(rf, settings):
@@ -194,35 +190,33 @@ def test_urls_processor_defaults_explicitly_none(rf, settings):
     settings.INFO_PRIVACY_AND_COOKIES = None
     settings.INFO_TERMS_AND_CONDITIONS = None
     settings.INFO_DIT = None
+    settings.CUSTOM_PAGE = None
 
     actual = context_processors.urls_processor(None)
-
-    assert actual == {
-        'header_footer_urls': {
-            'great_home': default_urls.GREAT_HOME,
-            'great_export_home': default_urls.GREAT_EXPORT_HOME,
-            'new_to_exporting': default_urls.EXPORTING_NEW,
-            'occasional_exporter': default_urls.EXPORTING_OCCASIONAL,
-            'regular_exporter': default_urls.EXPORTING_REGULAR,
-            'guidance_market_research': default_urls.GUIDANCE_MARKET_RESEARCH,
-            'guidance_customer_insight': (
-                default_urls.GUIDANCE_CUSTOMER_INSIGHT),
-            'guidance_finance': default_urls.GUIDANCE_FINANCE,
-            'guidance_business_planning': (
-                default_urls.GUIDANCE_BUSINESS_PLANNING),
-            'guidance_getting_paid': default_urls.GUIDANCE_GETTING_PAID,
-            'guidance_operations_and_compliance': (
-                default_urls.GUIDANCE_OPERATIONS_AND_COMPLIANCE),
-            'services_fab': default_urls.SERVICES_FAB,
-            'services_soo': default_urls.SERVICES_SOO,
-            'services_exopps': default_urls.SERVICES_EXOPPS,
-            'services_get_finance': default_urls.SERVICES_GET_FINANCE,
-            'services_events': default_urls.SERVICES_EVENTS,
-            'info_about': default_urls.INFO_ABOUT,
-            'info_contact_us': default_urls.INFO_CONTACT_US_DIRECTORY,
-            'info_privacy_and_cookies': default_urls.INFO_PRIVACY_AND_COOKIES,
-            'info_terms_and_conditions': (
-                default_urls.INFO_TERMS_AND_CONDITIONS),
-            'info_dit': default_urls.INFO_DIT,
-        }
+    expected_urls = {
+        'great_home': default_urls.GREAT_HOME,
+        'great_export_home': default_urls.GREAT_EXPORT_HOME,
+        'new_to_exporting': default_urls.EXPORTING_NEW,
+        'occasional_exporter': default_urls.EXPORTING_OCCASIONAL,
+        'regular_exporter': default_urls.EXPORTING_REGULAR,
+        'guidance_market_research': default_urls.GUIDANCE_MARKET_RESEARCH,
+        'guidance_customer_insight': default_urls.GUIDANCE_CUSTOMER_INSIGHT,
+        'guidance_finance': default_urls.GUIDANCE_FINANCE,
+        'guidance_business_planning': default_urls.GUIDANCE_BUSINESS_PLANNING,
+        'guidance_getting_paid': default_urls.GUIDANCE_GETTING_PAID,
+        'guidance_operations_and_compliance': (
+            default_urls.GUIDANCE_OPERATIONS_AND_COMPLIANCE
+        ),
+        'services_fab': default_urls.SERVICES_FAB,
+        'services_soo': default_urls.SERVICES_SOO,
+        'services_exopps': default_urls.SERVICES_EXOPPS,
+        'services_get_finance': default_urls.SERVICES_GET_FINANCE,
+        'services_events': default_urls.SERVICES_EVENTS,
+        'info_about': default_urls.INFO_ABOUT,
+        'info_contact_us': default_urls.INFO_CONTACT_US_DIRECTORY,
+        'info_privacy_and_cookies': default_urls.INFO_PRIVACY_AND_COOKIES,
+        'info_terms_and_conditions': default_urls.INFO_TERMS_AND_CONDITIONS,
+        'info_dit': default_urls.INFO_DIT,
+        'custom_page': default_urls.CUSTOM_PAGE,
     }
+    assert actual == {'header_footer_urls': expected_urls}
