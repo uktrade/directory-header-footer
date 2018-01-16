@@ -124,6 +124,18 @@ For the new header/footer (including JS):
 
 This adds an extra stylesheet to every page specifically for the header/footer and, if you have any style fixes, you will need to add these to a different stylesheet loaded after the header/footer stylesheet that will override broken styling.
 
+### Automated dependency updates
+
+You can run `make header_footer` to update the `directory-header-footer` dependency in the following repos (providing you have them on your system in the same directory as this one):
+* directory-sso
+* directory-sso-profile
+* directory-ui-buyer
+* directory-ui-export-readiness
+* help
+* navigator
+
+The scripts will ask you for the new version number, the name of the git branch to commit changes to, and the commit message then apply this to all the above repos and push the branch to the remote. PRs for each update will still need to be done manually.
+
 [code-climate-image]: https://codeclimate.com/github/uktrade/directory-header-footer/badges/issue_count.svg
 [code-climate]: https://codeclimate.com/github/uktrade/directory-header-footer
 
