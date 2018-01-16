@@ -20,6 +20,7 @@ req_files = [
 ]
 
 exp = r'(?:directory-header-footer\.git@v)(\d*\.\d*\.\d)'
+get_version = r'\d*\.\d*\.\d'
 
 
 def get_update_info():
@@ -34,11 +35,13 @@ def get_file_string(filepath):
 
 
 def current_version():
-    filepath = os.path.abspath(project_root / "requirements.txt")
-    reqs = get_file_string(filepath)
-    regex = re.compile(exp)
-    if regex.search(reqs) is not None:
-        current_version = regex.search(reqs).group(1)
+    filepath = os.path.abspath(
+        project_root / "directory_header_footer" / "version.py")
+    version_py = get_file_string(filepath)
+    regex = re.compile(get_version)
+    print(regex.search(version_py).group(0))
+    if regex.search(version_py) is not None:
+        current_version = regex.search(version_py).group(0)
         print("Current directory-header-footer version:", current_version)
         get_update_info()
     else:
