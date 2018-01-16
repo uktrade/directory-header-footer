@@ -33,3 +33,8 @@ compile_all_requirements: compile_requirements compile_test_requirements
 
 
 .PHONY: build clean test_requirements flake8 pytest test
+
+header_footer:
+	bash ./scripts/header_footer_git_make_branch.sh
+	python ./scripts/upgrade_header_footer.py
+	bash ./scripts/header_footer_git_push_changes.sh
