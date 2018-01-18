@@ -6,8 +6,7 @@ REPOS="
 ../directory-ui-buyer
 ../directory-ui-export-readiness
 ../navigator"
-echo "Write the commit message (without quotes) and press [ENTER]:"
-read $commitmsg
+IFS= read -r -p "Enter commit message: " commitmsg
 for dir in $REPOS; do
 	echo "Switching to repo $dir"
 	cd $dir
