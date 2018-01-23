@@ -126,6 +126,9 @@ This adds an extra stylesheet to every page specifically for the header/footer a
 
 ### Automated dependency updates
 
+Requirements:
+* [hub](https://hub.github.com/) cli tool configured with your github login
+
 You can run `make header_footer` to update the `directory-header-footer` dependency in the following repos (providing you have them on your system in the same directory as this one):
 * directory-sso
 * directory-sso-profile
@@ -134,7 +137,7 @@ You can run `make header_footer` to update the `directory-header-footer` depende
 * help
 * navigator
 
-The scripts will ask you for the new version number, the name of the git branch to commit changes to, and the commit message then apply this to all the above repos and push the branch to the remote. PRs for each update will still need to be done manually. As a safety measure the script also stashes all changes on each repo before checking out master and making a new branch but you should make sure to commit all local changes beforehand anyway.
+The scripts will ask you for the new version number, the name of the git branch to commit changes to, the commit message, and the ticket number, then apply this to all the above repos, push changes and create PRs. As a safety measure the script also stashes all changes on each repo before checking out master and making a new branch but you should make sure to commit all local changes beforehand anyway.
 
 [code-climate-image]: https://codeclimate.com/github/uktrade/directory-header-footer/badges/issue_count.svg
 [code-climate]: https://codeclimate.com/github/uktrade/directory-header-footer
