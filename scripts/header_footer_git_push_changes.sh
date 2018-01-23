@@ -14,5 +14,5 @@ for dir in $REPOS; do
 	git add -A
 	git commit -m "$commitmsg"
 	git push -u origin $(git rev-parse --abbrev-ref HEAD)
-	git pull-request -b master -m "https://uktrade.atlassian.net/browse/$ticketnum"
+	git pull-request -b master -m "$(printf "$(git rev-parse --abbrev-ref HEAD)\n\nhttps://uktrade.atlassian.net/browse/$ticketnum")"
 done
