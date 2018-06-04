@@ -24,17 +24,24 @@ test: flake8 pytest
 test_last_failed: test pytest_args='--last-failed'
 
 compile_requirements:
-	python3 -m piptools compile requirements.in
+	pip-compile requirements.in
+
+upgrade_requirements:
+	pip-compile --upgrade requirements.in
 
 compile_test_requirements:
-	python3 -m piptools compile requirements_test.in
+	pip-compile requirements_test.in
+
+upgrade_test_requirements:
+	pip-compile --upgrade requirements_test.in
 
 compile_all_requirements: compile_requirements compile_test_requirements
 
-
-.PHONY: build clean test_requirements flake8 pytest test
+upgrade_all_requirements: upgrade_requirements upgrade_test_requirements
 
 header_footer:
 	bash ./scripts/header_footer_git_make_branch.sh
 	python ./scripts/upgrade_header_footer.py
 	bash ./scripts/header_footer_git_push_changes.sh
+
+.PHONY: build clean test_requirements flake8 pytest test

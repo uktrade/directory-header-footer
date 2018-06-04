@@ -4,23 +4,28 @@
 #
 #    pip-compile --output-file requirements_test.txt requirements_test.in
 #
--e git+https://github.com/uktrade/directory-constants.git@v6.4.0#egg=directory_constants
+atomicwrites==1.1.5       # via pytest
+attrs==18.1.0             # via pytest
 beautifulsoup4==4.6.0
-certifi==2017.7.27.1      # via requests
+certifi==2018.4.16        # via requests
 chardet==3.0.4            # via requests
-codecov==2.0.9
-coverage==4.4.1           # via codecov, pytest-cov
-django==1.11.5
-flake8==3.0.4
+codecov==2.0.15
+coverage==4.5.1           # via codecov, pytest-cov
+directory-constants==6.8.0
+django==1.11.13
+flake8==3.5.0
 idna==2.6                 # via requests
-mccabe==0.5.3             # via flake8
-py==1.4.34                # via pytest
-pycodestyle==2.0.0        # via flake8
-pyflakes==1.2.3           # via flake8
-pytest-cov==2.3.1
-pytest-django==3.0.0
-pytest==3.0.2
-pytz==2017.2              # via django
+mccabe==0.6.1             # via flake8
+more-itertools==4.2.0     # via pytest
+pluggy==0.6.0             # via pytest
+py==1.5.3                 # via pytest
+pycodestyle==2.3.1        # via flake8
+pyflakes==1.6.0           # via flake8
+pytest-cov==2.5.1
+pytest-django==3.2.1
+pytest==3.6.0
+pytz==2017.2              # via directory-constants, django
 requests==2.18.4          # via codecov
 setuptools-git==1.2
+six==1.11.0               # via more-itertools, pytest
 urllib3==1.22             # via requests
